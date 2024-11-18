@@ -14,7 +14,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-white py-12 relative">
+    <footer className="bg-white py-12 relative mb-20 md:mb-0">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           className="flex flex-col items-center justify-center text-center"
