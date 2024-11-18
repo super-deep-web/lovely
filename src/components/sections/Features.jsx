@@ -3,18 +3,18 @@ import { motion } from 'framer-motion';
 export const Features = () => {
   const features = [
     {
-      title: "Modern Design",
-      description: "Clean and minimalist approach for a fresh look",
+      title: "1",
+      description: "???",
       icon: "✨"
     },
     {
-      title: "Responsive Layout",
-      description: "Perfect viewing experience across all devices",
+      title: "2",
+      description: "???",
       icon: "📱"
     },
     {
-      title: "Smooth Interactions",
-      description: "Delightful animations and transitions",
+      title: "3",
+      description: "???",
       icon: "🎯"
     }
   ];

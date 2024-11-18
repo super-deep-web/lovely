@@ -117,7 +117,7 @@ export const SecretPage = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-pink-50 opacity-50" />
               <div className="relative aspect-square rounded-lg overflow-hidden">
                 <img
-                  src="/public/images/xmas-stitch-v1.jpg"
+                  src="/images/xmas-stitch-v1.jpg"
                   alt="Imagen secreta 1"
                   className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                 />
@@ -147,7 +147,7 @@ export const SecretPage = () => {
               <div className="absolute inset-0 bg-gradient-to-l from-blue-50 to-pink-50 opacity-50" />
               <div className="relative aspect-square rounded-lg overflow-hidden">
                 <img
-                  src="/public/images/xmas-stitch-v2.jpg"
+                  src="/images/xmas-stitch-v2.jpg"
                   alt="Imagen secreta 2"
                   className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                 />

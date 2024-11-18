@@ -82,7 +82,7 @@ export const MusicPage = () => {
         <motion.div className="mb-16 relative" variants={itemVariants}>
           <div className="relative rounded-2xl overflow-hidden shadow-xl group">
             <img
-              src="/public/images/music.jpg"
+              src="/images/music.jpg"
               alt="Portada musical"
               className="w-full object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105"
             />

@@ -78,7 +78,7 @@ export const Navbar = () => {
         scrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 bg-slate-100 rounded-t-2xl">
+      <div className="max-w-6xl mx-auto px-4 bg-slate-100">
         <div className="flex items-center justify-between h-16">
           {!isMobile && (
             <div className="flex items-center space-x-2">
