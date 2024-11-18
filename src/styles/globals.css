@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105;
+  }
+  
+  .card {
+    @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300;
+  }
+
+  .nav-link {
+    @apply text-blue-600 hover:text-blue-800 transition-colors px-4 py-2;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
