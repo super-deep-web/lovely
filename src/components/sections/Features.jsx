@@ -3,19 +3,19 @@ import { motion } from 'framer-motion';
 export const Features = () => {
   const features = [
     {
-      title: "1",
-      description: "???",
+      title: "Por favor",
+      description: "Jamás te separes de mi, porque eres lo más importante que existe en mi vida y soy muy feliz a tu lado.",
+      icon: "😘"
+    },
+    {
+      title: "Sonríe",
+      description: "Porque tu felicidad es lo más importante para mi y haría lo que sea por verte siempre feliz.",
+      icon: "😍"
+    },
+    {
+      title: "Mira muy bien",
+      description: "Porque te puedes encontrar con alguna sorpresa mientras estas aquí, así que disfrútalo mucho.",
       icon: "✨"
-    },
-    {
-      title: "2",
-      description: "???",
-      icon: "📱"
-    },
-    {
-      title: "3",
-      description: "???",
-      icon: "🎯"
     }
   ];
 
@@ -46,7 +46,7 @@ export const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Our Services
+          Te amo únicamente a ti, y solo tuyo es mi corazón
         </motion.h2>
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-3 gap-8"

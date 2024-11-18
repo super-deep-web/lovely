@@ -73,12 +73,12 @@ export const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
       className={`fixed w-full ${
-        isMobile ? "bottom-0 top-auto" : "top-0"
+        isMobile ? "bottom-0 top-auto bg-slate-100" : "top-0"
       } z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+        scrolled ? "bg-slate-100 backdrop-blur-md shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 bg-slate-100">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {!isMobile && (
             <div className="flex items-center space-x-2">

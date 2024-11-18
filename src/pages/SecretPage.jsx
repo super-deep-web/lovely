@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { Heart, Stars, Sparkles } from "lucide-react";
+import { Heart, Stars, Sparkles, Download } from "lucide-react";
+import PropTypes from "prop-types";
 
 export const SecretPage = () => {
-  // Animaciones para elementos flotantes
   const floatingElements = [...Array(12)].map(() => ({
     x: Math.random() * 100,
     y: Math.random() * 100,
@@ -11,7 +11,6 @@ export const SecretPage = () => {
     icon: Math.random() > 0.5 ? Heart : Stars,
   }));
 
-  // Variantes de animación para los marcos
   const frameVariants = {
     hidden: {
       opacity: 0,
@@ -40,12 +39,42 @@ export const SecretPage = () => {
     },
   };
 
+  const handleDownload = (imageUrl, imageName) => {
+    fetch(imageUrl)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = imageName;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+      });
+  };
+
+  const DownloadButton = ({ imageUrl, imageName }) => (
+    <motion.button
+      onClick={() => handleDownload(imageUrl, imageName)}
+      className="absolute bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg z-10 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      <Download size={16} />
+      <span className="text-sm font-medium">Descargar</span>
+    </motion.button>
+  );
+
+  DownloadButton.propTypes = {
+    imageUrl: PropTypes.string.isRequired,
+    imageName: PropTypes.string.isRequired,
+  };
+
   return (
     <section className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-      {/* Fondo con gradiente */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-50 via-pink-50 to-white -z-10" />
 
-      {/* Elementos flotantes decorativos */}
       {floatingElements.map((element, index) => {
         const Icon = element.icon;
         return (
@@ -72,7 +101,6 @@ export const SecretPage = () => {
       })}
 
       <div className="max-w-6xl mx-auto px-4">
-        {/* Título con animación */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -102,9 +130,7 @@ export const SecretPage = () => {
           </p>
         </motion.div>
 
-        {/* Contenedor de imágenes */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 max-w-5xl mx-auto">
-          {/* Marco 1 */}
           <motion.div
             variants={frameVariants}
             initial="hidden"
@@ -121,8 +147,11 @@ export const SecretPage = () => {
                   alt="Imagen secreta 1"
                   className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                 />
-                {/* Overlay con brillos */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <DownloadButton
+                  imageUrl="/images/xmas-stitch-v1.jpg"
+                  imageName="regalo-especial-1.jpg"
+                />
               </div>
               <motion.div
                 className="absolute top-2 right-2"
@@ -134,7 +163,6 @@ export const SecretPage = () => {
             </div>
           </motion.div>
 
-          {/* Marco 2 */}
           <motion.div
             variants={frameVariants}
             initial="hidden"
@@ -151,8 +179,11 @@ export const SecretPage = () => {
                   alt="Imagen secreta 2"
                   className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                 />
-                {/* Overlay con brillos */}
                 <div className="absolute inset-0 bg-gradient-to-bl from-pink-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <DownloadButton
+                  imageUrl="/images/xmas-stitch-v2.jpg"
+                  imageName="regalo-especial-2.jpg"
+                />
               </div>
               <motion.div
                 className="absolute top-2 left-2"
